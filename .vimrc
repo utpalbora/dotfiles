@@ -86,9 +86,9 @@ syntax on
 set encoding=utf-8
 
 "{
-map <C-K> :py3f /home/ubora/Work/llvm/tools/clang/tools/clang-format/clang-format.py<cr>
-imap <C-K> <c-o>:py3f /home/ubora/Work/llvm/tools/clang/tools/clang-format/clang-format.py<cr>
-let g:clang_format_path = '/home/ubora/Work/ninja_build/bin/clang-format'
+map <C-K> :py3f /home/utpal/Work/llvm/tools/clang/tools/clang-format/clang-format.py<cr>
+imap <C-K> <c-o>:py3f /home/utpal/Work/llvm/tools/clang/tools/clang-format/clang-format.py<cr>
+let g:clang_format_path = '/home/utpal/Work/ninja/bin/clang-format'
 "}
 
 "{
