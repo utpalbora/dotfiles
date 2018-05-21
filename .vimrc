@@ -37,7 +37,7 @@ Plugin 'tpope/vim-fugitive'
 
 Plugin 'flazz/vim-colorschemes'
 
-"Plugin 'durgaswaroop/vim-colors-solarized'
+Plugin 'altercation/vim-colors-solarized'
 
 "Plugin 'vim-scripts/taglist.vim'
 
@@ -51,17 +51,23 @@ Plugin 'scrooloose/nerdtree'
 
 "Plugin 'wincent/command-t'
 
-"Plugin 'klen/python-mode'
+Plugin 'python-mode/python-mode'
 
 Plugin 'Valloric/YouCompleteMe'
+
+Plugin 'davidhalter/jedi-vim'
 
 "Plugin 'ctrlpvim/ctrlp.vim'
 
 "Plugin 'itchyny/lightline.vim'
 
-"Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-surround'
 
-"Plugin 'scrooloose/syntastic'
+Plugin 'vim-syntastic/syntastic'
+
+Plugin 'plasticboy/vim-markdown'
+
+"Plugin 'vim-scripts/a.vim'
 
 "Plugin 'honza/vim-snippets'
 
@@ -86,9 +92,18 @@ syntax on
 set encoding=utf-8
 
 "{
-map <C-K> :py3f /home/utpal/Work/llvm/tools/clang/tools/clang-format/clang-format.py<cr>
-imap <C-K> <c-o>:py3f /home/utpal/Work/llvm/tools/clang/tools/clang-format/clang-format.py<cr>
-let g:clang_format_path = '/home/utpal/Work/ninja/bin/clang-format'
+set t_Co=256
+"}
+
+"{
+"Native syntax highlighting for Markdown
+autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
+"}
+
+"{
+map <C-K> :py3f /home/ubora/Work/llvm/tools/clang/tools/clang-format/clang-format.py<cr>
+imap <C-K> <c-o>:py3f /home/ubora/Work/llvm/tools/clang/tools/clang-format/clang-format.py<cr>
+let g:clang_format_path = '/home/ubora/Work/ninja_build/bin/clang-format'
 "}
 
 "{
