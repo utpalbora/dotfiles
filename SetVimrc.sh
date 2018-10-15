@@ -7,5 +7,5 @@ if ! test -d ~/.vim/bundle/Vundle.vim; then
 fi
 cp .vimrc ~/.vimrc
 vim +PluginInstall +qall
-cd ~/.vim/bundle/YouCompleteMe & python3 ~/.vim/bundle/YouCompleteMe/install.py --clang-completer
+cd ~/.vim/bundle/YouCompleteMe && python3 ~/.vim/bundle/YouCompleteMe/install.py --clang-completer
 cp ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py ~/.vim/.ycm_extra_conf.py
