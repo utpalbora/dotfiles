@@ -101,9 +101,9 @@ autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
 "}
 
 "{
-map <C-K> :py3f /home/ubora/Work/llvm/tools/clang/tools/clang-format/clang-format.py<cr>
-imap <C-K> <c-o>:py3f /home/ubora/Work/llvm/tools/clang/tools/clang-format/clang-format.py<cr>
-let g:clang_format_path = '/home/ubora/Work/ninja_build/bin/clang-format'
+map <C-K> :py3f /usr/share/vim/addons/syntax/clang-format.py<cr>
+imap <C-K> <c-o>:py3f /usr/share/vim/addons/syntax/clang-format.py<cr>
+"let g:clang_format_path = ''
 "}
 
 "{
@@ -186,6 +186,13 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_use_ultisnips_completer = 1
 let g:ycm_key_list_select_completion=[]
 let g:ycm_key_list_previous_completion=[]
+
+let g:ycm_python_interpreter_path = ''
+let g:ycm_python_sys_path = []
+let g:ycm_extra_conf_vim_data = [
+  \  'g:ycm_python_interpreter_path',
+  \  'g:ycm_python_sys_path'
+  \]
 
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 "}
