@@ -65,6 +65,7 @@ Plugin 'tpope/vim-surround'
 
 Plugin 'vim-syntastic/syntastic'
 
+Plugin 'godlygeek/tabular' "Dependency of vim-markdown
 Plugin 'plasticboy/vim-markdown'
 
 "Plugin 'vim-scripts/a.vim'
@@ -87,6 +88,27 @@ set tabstop=4
 set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
+"set clipboard=unnamed
+set clipboard=unnamedplus
+
+"set number    " turn line numbers on
+"set nonumber  " turn line numbers off
+"set number!   " toggle line numbers
+"set relativenumber    " turn relative line numbers on
+"set norelativenumber  " turn relative line numbers off
+"set relativenumber!   " toggle relative line numbers
+"set number relativenumber      " turn hybrid line numbers on
+"set nonumber norelativenumber  " turn hybrid line numbers off
+"set !number !relativenumber    " toggle hybrid line numbers
+
+"Automatic toggling between line number modes
+set number relativenumber
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
+
 
 syntax on
 set encoding=utf-8
