@@ -28,6 +28,9 @@ fi
 if ! test -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting; then
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 fi
+if ! test -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel9k; then
+  git clone https://github.com/bhilburn/powerlevel9k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel9k
+fi
 count=$(grep -c "DEFAULT_USER=\`whoami\`" ~/.zshrc)
 if [ $count -eq 0 ]; then
   echo "DEFAULT_USER=\`whoami\`" >> ~/.zshrc
@@ -37,4 +40,8 @@ if [ $count1 -eq 0 ]; then
   echo "eval \`dircolors ~/.solarized/dircolors.ansi-dark\`" >> ~/.zshrc
 fi
 
-sed -i "s/ZSH_THEME=\"robbyrussell\"/ZSH_THEME=\"agnoster\"/" ~/.zshrc
+sed -i "s/^ZSH_THEME=\"robbyrussell\"/ZSH_THEME=\"agnoster\"/" ~/.zshrc
+
+#Or replace default .zshrc with my custom one
+#cp ~/.zshrc ~/.zshrc.`date '+%Y-%m-%d:%H:%M:%S'`
+#cp .zshrc ~/.zshrc
