@@ -1,3 +1,7 @@
 [user]
 	email = cs14mtech11017@iith.ac.in
-	name = Utpal Bora
+    name = Utpal Bora
+[core]
+    editor = vim
+[github]
+    user = utpalbora
