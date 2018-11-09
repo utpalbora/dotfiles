@@ -45,3 +45,6 @@ sed -i "s/^ZSH_THEME=\"robbyrussell\"/ZSH_THEME=\"agnoster\"/" ~/.zshrc
 #Or replace default .zshrc with my custom one
 #cp ~/.zshrc ~/.zshrc.`date '+%Y-%m-%d:%H:%M:%S'`
 #cp .zshrc ~/.zshrc
+
+#cp ~/.aliases ~/.aliases.`date '+%Y-%m-%d:%H:%M:%S'`
+#cp .aliases ~/.aliases
