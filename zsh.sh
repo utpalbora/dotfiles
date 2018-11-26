@@ -46,5 +46,12 @@ sed -i "s/^ZSH_THEME=\"robbyrussell\"/ZSH_THEME=\"agnoster\"/" ~/.zshrc
 #cp ~/.zshrc ~/.zshrc.`date '+%Y-%m-%d:%H:%M:%S'`
 #cp .zshrc ~/.zshrc
 
+#Replace default .zprofile with my custom one
+#cp ~/.zprofile ~/.zprofile.`date '+%Y-%m-%d:%H:%M:%S'`
+#cp .zprofile ~/.zprofile
+
 #cp ~/.aliases ~/.aliases.`date '+%Y-%m-%d:%H:%M:%S'`
 #cp .aliases ~/.aliases
+
+#cp ~/.byobu/.tmux.conf ~/.byobu/.tmux.conf.`date '+%Y-%m-%d:%H:%M:%S'`
+#cp .byobu/.tmux.conf ~/.byobu/.tmux.conf
