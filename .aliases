@@ -74,3 +74,8 @@ function current_branch() {
   ref=$(git rev-parse --short HEAD 2> /dev/null) || return
   echo ${ref#refs/heads/}
 }
+
+#hide stupid snapd loop devices
+alias df='df -h -x squashfs -x tmpfs'
+#hide stupid snapd loop devices
+alias lsblk='lsblk -e 7'
