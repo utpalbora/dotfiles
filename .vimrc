@@ -118,8 +118,16 @@ set t_Co=256
 "}
 
 "{
+augroup filetype
+  au! BufRead,BufNewFile *.ll     set filetype=llvm
+augroup END
+augroup filetype
+  au! BufRead,BufNewFile *Makefile*     set filetype=make
+augroup END
+augroup filetype
 "Native syntax highlighting for Markdown
-autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
+  au! BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
+augroup END
 "}
 
 "{
@@ -156,6 +164,14 @@ if !exists('g:airline_symbols')
 endif
 "let g:airline_section_z = airline#section#create(['windowswap', '%3p%% ', 'linenr', ':%3v'])
 "}
+
+"set laststatus=2 statusline=%02n:%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+nnoremap <Leader>ls :ls<CR>
+nnoremap <Leader>pb :bp<CR>
+nnoremap <Leader>nb :bn<CR>
+nnoremap <Leader>. :e#<CR>
+"nnoremap <Leader>o :e!<CR>
+nnoremap <Leader>sp :sp<CR>
 
 "{
 "autocmd vimenter * NERDTree
@@ -203,18 +219,39 @@ let NERDTreeIgnore=[ '\.git', '\.hg', '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj
 "let g:clang_close_preview = 1
 "let g:clang_complete_macros = 1
 
-let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_use_ultisnips_completer = 1
 let g:ycm_key_list_select_completion=[]
 let g:ycm_key_list_previous_completion=[]
-
-let g:ycm_python_interpreter_path = ''
-let g:ycm_python_sys_path = []
-let g:ycm_extra_conf_vim_data = [
-  \  'g:ycm_python_interpreter_path',
-  \  'g:ycm_python_sys_path'
-  \]
-
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_min_num_identifier_candidate_chars = 4
+let g:ycm_extra_conf_globlist = ['~/repos/*']
+let g:ycm_filetype_specific_completion_to_disable = {'javascript': 1}
+let g:ycm_rust_src_path = $HOME . '/repos/rust/src'
+let g:ycm_min_num_of_chars_for_completion = 2
+let g:ycm_max_num_candidates = 20
+let g:ycm_max_num_identifier_candidates = 7
+let g:ycm_auto_trigger = 1
+let g:ycm_filetype_whitelist = {'*': 1}
+let g:ycm_error_symbol = '>>'
+let g:ycm_warning_symbol = '>'
+let g:ycm_enable_diagnostic_signs = 1
+let g:ycm_enable_diagnostic_highlighting = 1
+let g:ycm_always_populate_location_list = 0
+let g:ycm_complete_in_comments = 1
+let g:ycm_complete_in_strings = 1
+let g:ycm_collect_identifiers_from_comments_and_strings = 0
+let g:ycm_collect_identifiers_from_tags_files = 0
+let g:ycm_seed_identifiers_with_syntax = 1
+let g:ycm_key_list_stop_completion = ['<C-y>']
+let g:ycm_key_invoke_completion = '<C-Space>'
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
+
+nnoremap <leader>y :YcmForceCompileAndDiagnostics<cr>
+nnoremap <leader>gt :YcmCompleter GoTo<CR>
+nnoremap <leader>gdf :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>gdc :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>gi :YcmCompleter GoToInclude<CR>
+nnoremap <leader>f :YcmCompleter FixIt<CR>
+
 "}

@@ -116,3 +116,7 @@ if ! shopt -oq posix; then
   fi
 fi
 [ -r /home/`whoami`/.byobu/prompt ] && . /home/`whoami`/.byobu/prompt   #byobu-prompt#
+if [ -f /home/`whoami`/hub-linux-amd64-2.6.0/etc/hub.bash_completion.sh ] ; then
+. /home/`whoami`/hub-linux-amd64-2.6.0/etc/hub.bash_completion.sh
+fi
+source /opt/intel/compilers_and_libraries_2018/linux/bin/compilervars.sh intel64
