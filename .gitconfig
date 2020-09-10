@@ -1,7 +1,15 @@
 [user]
 	email = cs14mtech11017@iith.ac.in
-    name = Utpal Bora
+	name = Utpal Bora
+	signingkey = cs14mtech11017@iith.ac.in
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[commit]
+	gpgsign = true
 [core]
-    editor = vim
+	editor = vim
 [github]
     user = utpalbora

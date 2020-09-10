@@ -48,7 +48,7 @@ Plugin 'Superbil/llvm.vim'
 "Plugin 'Lokaltog/vim-powerline'
 
 Plugin 'scrooloose/nerdtree'
-
+Plugin 'junegunn/fzf.vim'
 "Plugin 'wincent/command-t'
 
 Plugin 'python-mode/python-mode'
@@ -125,7 +125,10 @@ augroup filetype
   au! BufRead,BufNewFile *Makefile*     set filetype=make
 augroup END
 augroup filetype
+  au! BufRead,BufNewFile *.f95     set filetype=fortran
+augroup END
 "Native syntax highlighting for Markdown
+augroup filetype
   au! BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
 augroup END
 "}
@@ -209,7 +212,12 @@ let NERDTreeIgnore=[ '\.git', '\.hg', '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj
 "let g:clang_use_library = 1
 "let g:Powerline_symbols = 'fancy'
 
-
+"{
+let fortran_free_source=1
+let fortran_have_tabs=1
+let fortran_more_precise=1
+let fortran_do_enddo=1
+"}
 
 "{
 "let g:clang_complete_copen = 0
@@ -246,6 +254,12 @@ let g:ycm_seed_identifiers_with_syntax = 1
 let g:ycm_key_list_stop_completion = ['<C-y>']
 let g:ycm_key_invoke_completion = '<C-Space>'
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
+" Let clangd fully control code completion
+let g:ycm_clangd_uses_ycmd_caching = 0
+" Use installed clangd, not YCM-bundled clangd which doesn't get updates.
+let g:ycm_clangd_binary_path = exepath("clangd")
+" Compile project with cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1
+" Copy compile_commands.json from build dir to source root
 
 nnoremap <leader>y :YcmForceCompileAndDiagnostics<cr>
 nnoremap <leader>gt :YcmCompleter GoTo<CR>

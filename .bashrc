@@ -119,4 +119,5 @@ fi
 if [ -f /home/`whoami`/hub-linux-amd64-2.6.0/etc/hub.bash_completion.sh ] ; then
 . /home/`whoami`/hub-linux-amd64-2.6.0/etc/hub.bash_completion.sh
 fi
-source /opt/intel/compilers_and_libraries_2018/linux/bin/compilervars.sh intel64
+#source /opt/intel/compilers_and_libraries_2018/linux/bin/compilervars.sh intel64
+export GEM_HOME="$HOME/.gem"

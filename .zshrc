@@ -122,3 +122,6 @@ export LC_ALL=en_US.UTF-8
 
 DEFAULT_USER=`whoami`
 eval `dircolors ~/.solarized/dircolors.ansi-dark`
+
+export GEM_HOME="$HOME/.gem"
+export PATH="$PATH:$HOME/android-studio/bin"

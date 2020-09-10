@@ -17,9 +17,11 @@ mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
 wget https://github.com/madmalik/mononoki/releases/download/1.2/mononoki.zip -O mononoki.zip
 mkdir -p ~/.fonts/mononoki
 unzip -u mononoki.zip -d ~/.fonts/mononoki/
+rm mononoki.zip
 wget https://fonts.google.com/download\?family\=Source%20Code%20Pro -O Source_Code_Pro.zip
 mkdir -p ~/.fonts/Source_Code_Pro
 unzip -u Source_Code_Pro.zip -d ~/.fonts/Source_Code_Pro
+rm Source_Code_Pro.zip
 fc-cache -vf ~/.fonts/
 sudo apt-get install -fmy autojump python-pygments
 if ! test -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions; then
