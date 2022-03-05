@@ -74,6 +74,9 @@ Plugin 'plasticboy/vim-markdown'
 
 "Plugin 'SirVer/ultisnips'
 
+" Slime for Vim
+"Plugin 'kovisoft/slimv'
+
 " add plugins before this
 call vundle#end()
 
@@ -102,11 +105,12 @@ set clipboard=unnamedplus
 "set !number !relativenumber    " toggle hybrid line numbers
 
 "Automatic toggling between line number modes
-set number relativenumber
+"set number relativenumber
+"set number
 augroup numbertoggle
   autocmd!
-  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+  "autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  "autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 augroup END
 
 
@@ -253,7 +257,8 @@ let g:ycm_collect_identifiers_from_tags_files = 0
 let g:ycm_seed_identifiers_with_syntax = 1
 let g:ycm_key_list_stop_completion = ['<C-y>']
 let g:ycm_key_invoke_completion = '<C-Space>'
-let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
+let g:ycm_confirm_extra_conf = 0
+" let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 " Let clangd fully control code completion
 let g:ycm_clangd_uses_ycmd_caching = 0
 " Use installed clangd, not YCM-bundled clangd which doesn't get updates.
@@ -267,5 +272,20 @@ nnoremap <leader>gdf :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>gdc :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>gi :YcmCompleter GoToInclude<CR>
 nnoremap <leader>f :YcmCompleter FixIt<CR>
+
+let g:NERDTreeHijackNetrw=0
+
+"set foldmethod=syntax
+set nofoldenable
+"augroup folds
+"  au!
+"  au InsertEnter * let w:oldfdm = &l:foldmethod | setlocal foldmethod=manual
+"  au InsertLeave *
+"        \ if exists('w:oldfdm') |
+"        \   let &l:foldmethod = w:oldfdm |
+"        \   unlet w:oldfdm |
+"        \ endif |
+"        \ normal! zv
+"augroup END
 
 "}
